@@ -1,0 +1,14 @@
+{ 
+    "apikey":     "change-me-to-desired-api-key",
+    "satellite":  "us-central-1.tardigrade.io:7777",
+    "bucket":     "change-me-to-desired-bucket",
+    "uploadPath": "change-me-to-desired-upload-path",
+    "encryptionpassphrase": "test",
+    "serializedAccess": "change-me-to-desired-serilized-access-key",
+    "allowDownload": "true",
+    "allowUpload": "false",
+    "allowList": "true",
+    "allowDelete": "true",
+	"notBefore": "0",
+	"notAfter": "0"
+}	
