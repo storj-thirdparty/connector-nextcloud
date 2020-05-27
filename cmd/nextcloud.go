@@ -19,8 +19,8 @@ type ConfigNextcloud struct {
 }
 
 // LoadNextcloudProperty reads and parses the JSON file
-// that contains a Nextcloud instance's properties
-// and returns all the properties as an object.
+// that contains a Nextcloud instance's properties.
+// It returns all the properties as an object.
 func LoadNextcloudProperty(fullFileName string) ConfigNextcloud {
 
 	var configNextcloud ConfigNextcloud
@@ -61,7 +61,6 @@ func ConnectToNextcloud(configNextcloud ConfigNextcloud) *gonextcloud.Client {
 	if err = nextcloudClient.Login(configNextcloud.Username, configNextcloud.Password); err != nil {
 		log.Fatal("Login Error", err)
 	}
-	defer nextcloudClient.Logout()
 
 	return nextcloudClient
 }
@@ -91,8 +90,8 @@ func GetFilesWithPaths(nextcloudClient *gonextcloud.Client, path string) {
 	}
 }
 
-// GetReader returns a Reader of corresponding file whose path is specified by the user.
-//  io.ReadCloser type of object returned is used to perform transfer of file to Storj
+// GetReader returns a Reader of corresponding file whose path is specified.
+// io.ReadCloser type of object returned is used to perform transfer of file to Storj.
 func GetReader(nextcloudClient *gonextcloud.Client, path string) io.ReadCloser {
 
 	nextcloudReader, err := nextcloudClient.WebDav().ReadStream(path)

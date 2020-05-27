@@ -4,7 +4,7 @@
 
 ## Overview
 
-The nextcloud Connector connects to nextcloud, takes complete backup of the data and uploads the backup data on Storj network.
+The nextcloud Connector connects to nextcloud and transfers all the files with the file structure to Storj network.
 
 
 ```bash
@@ -18,24 +18,24 @@ Available Commands:
 
 ```
 
-`store` - Connect to the specified database (default: `nextcloud_property.json`).  Back-up of the database is generated using tooling provided by Nextcloud and then uploaded to the Storj network.  Connect to a Storj v3 network using the access specified in the Storj configuration file (default: `storj_config.json`). 
+`store` - Connect to the specified database (default: `nextcloud_property.json`). Back-up of the database is generated using tooling provided by Nextcloud and then uploaded to the Storj network. Connect to a Storj v3 network using the access specified in the Storj configuration file (default: `storj_config.json`).
 
- Back-up data is iterated through and upload in 32KB chunks to the Storj network.
+Back-up data is iterated through and upload in 32KB chunks to the Storj network.
 
 The following flags  can be used with the `store` command:
 
-* `accesskey` - Connects to Storj network using instead of Serialized Access Key instead of API key, satellite url and encryption passphrase .
+* `accesskey` - Connects to Storj network using instead of Serialized Access Key instead of API key, satellite url and encryption passphrase.
 * `shared` - Generates a restricted shareable serialized access with the restrictions specified in the Storj configuration file.
 * `debug` - Download the uploaded backup files to local disk inside project_folder/debug folder.
 
 
 
-Sample configuration files are provided in the `./config` folder. 
+Sample configuration files are provided in the `./config` folder.
 
 
 ## Requirements and Install
 
-To build from scratch, [install the latest Go](https://golang.org/doc/install#install). 
+To build from scratch, [install the latest Go](https://golang.org/doc/install#install).
 
 > Note: Ensure go modules are enabled (GO111MODULE=on)
 
@@ -92,10 +92,10 @@ $ ./connector-nextcloud --help
 $ ./connector-nextcloud version
 ```
 
-##### Create backup from Nextcloud and upload to Storj
+##### Transfer files from Nextcloud to Storj
 
 ```
-$ ./connector-nextcloud store 
+$ ./connector-nextcloud store
 ```
 
 

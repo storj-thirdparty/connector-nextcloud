@@ -10,8 +10,8 @@ import (
 // rootCmd represents the base command when called without any subcommands
 var rootCmd = &cobra.Command{
 	Use:   "connector-nextcloud",
-	Short: "Backup Nextcloud data to the decentralized Storj network.",
-	Long:  `connector-nextcloud - Backup your Nextcloud data to the decentralized Storj network.`,
+	Short: "Back-up Nextcloud data to the decentralized Storj network.",
+	Long:  `connector-nextcloud - Back-up your Nextcloud data to the decentralized Storj network.`,
 }
 
 // Execute adds all child commands to the root command and sets flags appropriately.

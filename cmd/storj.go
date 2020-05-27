@@ -97,7 +97,7 @@ func ShareAccess(access *uplink.Access, configStorj ConfigStorj) {
 	if err != nil {
 		log.Fatal("Could not serialize shared access: ", err)
 	}
-	fmt.Println("Shareable sererialized access: ", serializedAccess)
+	fmt.Println("Shareable serialized access: ", serializedAccess)
 }
 
 // ConnectToStorj reads Storj configuration from given file
@@ -108,7 +108,7 @@ func ConnectToStorj(fullFileName string, configStorj ConfigStorj, accesskey bool
 	var access *uplink.Access
 	var cfg uplink.Config
 
-	// Configure the UserAgent
+	// Configure the UserAgent.
 	cfg.UserAgent = "Nextcloud"
 	ctx := context.Background()
 	var err error
@@ -136,7 +136,7 @@ func ConnectToStorj(fullFileName string, configStorj ConfigStorj, accesskey bool
 	}
 	defer project.Close()
 
-	// Ensure the desired Bucket within the Project
+	// Ensure the desired Bucket within the Project.
 	_, err = project.EnsureBucket(ctx, configStorj.Bucket)
 	if err != nil {
 		log.Fatal(err)
@@ -151,7 +151,7 @@ func UploadData(project *uplink.Project, configStorj ConfigStorj, uploadFileName
 
 	ctx := context.Background()
 
-	// To trim the first "/" form the file name
+	// To trim the first "/" form the file name.
 	checkSlash := uploadFileName[0:1]
 	if checkSlash == "/" {
 		uploadFileName = trimLeftSlash(uploadFileName)
@@ -164,7 +164,7 @@ func UploadData(project *uplink.Project, configStorj ConfigStorj, uploadFileName
 	}
 	fmt.Printf("\nUploading %s to %s.", configStorj.UploadPath+uploadFileName, configStorj.Bucket)
 
-	// Upload data on storj
+	// Copy data to storj object.
 	_, err = io.Copy(upload, reader)
 	if err != nil {
 		abortErr := upload.Abort()

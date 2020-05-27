@@ -10,7 +10,7 @@ There are two config files that contain Storj network and Nextcloud connection i
 
 ##### `nextcloud_property.json`
 
-Inside the `./config` directory there is a  `nextcloud_property.json` file, with following information about your nextcloud account instance:
+Inside the `./config` directory there is a `nextcloud_property.json` file, with following information about your nextcloud account instance:
 
 * `url`- Login url of the user nextcloud account of the corresponding service provider
 * `username` - Username of nextcloud account
@@ -66,6 +66,7 @@ $ ./connector-nextcloud store --accesskey
 ```
 $ ./connector-nextcloud store --share
 ```
+
 
 
 ## Testing

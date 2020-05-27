@@ -2,6 +2,7 @@ package cmd
 
 import (
 	"fmt"
+	"log"
 
 	"github.com/spf13/cobra"
 )
@@ -43,21 +44,24 @@ func nextcloudStore(cmd *cobra.Command, args []string) {
 	// Connect to storj network using the specified credentials.
 	access, project := ConnectToStorj(fullFileNameStorj, storjConfig, useAccessKey)
 
-	// Connect to Nextcloud using the specified credientials
+	// Connect to Nextcloud using the specified credentials
 	nextcloudClient := ConnectToNextcloud(configNextcloud)
 
 	// Create a slice of file names to be uploaded.
 	GetFilesWithPaths(nextcloudClient, "/")
 
 	fmt.Printf("\nInitiating back-up.\n")
-	// Fetch all backup files from Nextcloud instance and simultaneously store them into desired Storj bucket.
+	// Fetch all files' reader stream from Nextcloud instance and simultaneously store them into desired Storj bucket.
 	for i := 0; i < len(AllFilesWithPaths); i++ {
 		file := AllFilesWithPaths[i]
 		nextcloudReader := GetReader(nextcloudClient, file)
 		UploadData(project, storjConfig, file, nextcloudReader, AllFilesWithPaths[i])
-
 	}
 	fmt.Printf("\nBack-up complete.\n\n")
+
+	if err := nextcloudClient.Logout(); err != nil {
+		log.Fatal(err)
+	}
 
 	// Create restricted shareable serialized access if share is provided as argument.
 	if useAccessShare {
