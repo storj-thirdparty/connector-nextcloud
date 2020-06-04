@@ -59,7 +59,7 @@ go build
  To download the project inside your GOPATH use the following command:
 
 ```
-go get github.com/storj-thridparty/connector-nextcloud
+go get github.com/storj-thirdparty/connector-nextcloud
 ```
 
 **NOTE**: The above command may show the following warnings and can be ingnored:
