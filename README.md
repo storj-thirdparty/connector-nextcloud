@@ -1,6 +1,8 @@
 # connector-nextcloud (uplink v1.0.5)
 
 [![Go Report Card](https://goreportcard.com/badge/github.com/storj-thirdparty/connector-nextcloud)](https://goreportcard.com/report/github.com/storj-thirdparty/connector-nextcloud)
+![Cloud Build](https://storage.googleapis.com/storj-utropic-services-badges/builds/connector-nextcloud/branches/master.svg)
+
 
 ## Overview
 
