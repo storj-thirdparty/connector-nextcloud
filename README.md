@@ -1,5 +1,6 @@
 # connector-nextcloud (uplink v1.0.5)
 
+[![Codacy Badge](https://api.codacy.com/project/badge/Grade/ca4fac7b7d1b4e919bb2e9aabdb722aa)](https://app.codacy.com/gh/storj-thirdparty/connector-nextcloud?utm_source=github.com&utm_medium=referral&utm_content=storj-thirdparty/connector-nextcloud&utm_campaign=Badge_Grade_Dashboard)
 [![Go Report Card](https://goreportcard.com/badge/github.com/storj-thirdparty/connector-nextcloud)](https://goreportcard.com/report/github.com/storj-thirdparty/connector-nextcloud)
 ![Cloud Build](https://storage.googleapis.com/storj-utropic-services-badges/builds/connector-nextcloud/branches/master.svg)
 
