@@ -9,7 +9,6 @@
 
 The nextcloud Connector connects to nextcloud and transfers all the files with the file structure to Storj network.
 
-
 ```bash
 Usage:
   connector-nextcloud [command] <flags>
@@ -30,9 +29,8 @@ The following flags  can be used with the `store` command:
 * `accesskey` - Connects to the Storj network using a serialized access key instead of an API key, satellite url and encryption passphrase.
 * `share` - Generates a restricted shareable serialized access with the restrictions specified in the Storj configuration file.
 
-
-
 Sample configuration files are provided in the `./config` folder.
+
 
 
 ## Requirements and Install
@@ -41,7 +39,9 @@ To build from scratch, [install the latest Go](https://golang.org/doc/install#in
 
 > Note: Ensure go modules are enabled (GO111MODULE=on)
 
-#### Option #1: clone this repo (most common)
+
+
+### Option #1: clone this repo (most common)
 
 To clone the repo
 
@@ -56,15 +56,18 @@ cd connector-nextcloud
 go build
 ```
 
-#### Option #2:  ``go get`` into your gopath
 
- To download the project inside your GOPATH use the following command:
+
+### Option #2:  ``go get`` into your gopath
+
+To download the project inside your GOPATH use the following command:
 
 ```
 go get github.com/storj-thirdparty/connector-nextcloud
 ```
 
-**NOTE**: The above command may show the following warnings and can be ingnored:
+
+> NOTE: The above command may show the following warnings and can be ingnored:
 ```
 github.com/storj-thirdparty/connector-nextcloud/nextcloud
 ../../go/src/github.com/storj-thirdparty/connector-nextcloud/nextcloud/nextcloud.go:78:2: cannot use nextcloudClient (type gonextcloud.Client) as type *gonextcloud.Client in return argument:
@@ -77,35 +80,29 @@ github.com/storj-thirdparty/connector-nextcloud/nextcloud
 ../../go/src/github.com/storj-thirdparty/connector-nextcloud/nextcloud/nextcloud.go:130:41: nextcloudClient.WebDav undefined (type *gonextcloud.Client is pointer to interface, not interface)
 ```
 
-
 ## Run (short version)
 
 Once you have built the project run the following commands as per your requirement:
 
-##### Get help
+### Get help
 
 ```
 $ ./connector-nextcloud --help
 ```
 
-##### Check version
+### Check version
 
 ```
-$ ./connector-nextcloud version
+$ ./connector-nextcloud --version
 ```
 
-##### Transfer files from Nextcloud to Storj
+### Transfer files from Nextcloud to Storj
 
 ```
 $ ./connector-nextcloud store
 ```
 
 
-## Documentation
+## Flow Diagram
 
-For more information on runtime flags, configuration, testing, and diagrams, check out the [Detail](//github.com/storj-thirdparty/connector-nextcloud/wiki/) or jump to:
-
-* [Config Files](//github.com/storj-thirdparty/connector-nextcloud/wiki/#config-files)
-* [Run (long version)](//github.com/storj-thirdparty/connector-nextcloud/wiki/#run)
-* [Testing](//github.com/storj-thirdparty/connector-nextcloud/wiki/#testing)
-* [Flow Diagram](//github.com/storj-thirdparty/connector-nextcloud/wiki/#flow-diagram)
+![Flow Diagram](/_images/arch.drawio.png ':include :type=iframe width=100% height=1000px')

@@ -56,9 +56,15 @@ func LoadStorjConfiguration(fullFileName string) ConfigStorj {
 	fmt.Println("Bucket		: ", configStorj.Bucket)
 
 	// Convert the upload path to standard form.
-	checkSlash := configStorj.UploadPath[len(configStorj.UploadPath)-1:]
-	if checkSlash != "/" {
-		configStorj.UploadPath = configStorj.UploadPath + "/"
+	if configStorj.UploadPath != "" {
+		if configStorj.UploadPath == "/" {
+			configStorj.UploadPath = ""
+		} else {
+			checkSlash := configStorj.UploadPath[len(configStorj.UploadPath)-1:]
+			if checkSlash != "/" {
+				configStorj.UploadPath = configStorj.UploadPath + "/"
+			}
+		}
 	}
 
 	fmt.Println("Upload Path\t: ", configStorj.UploadPath)
