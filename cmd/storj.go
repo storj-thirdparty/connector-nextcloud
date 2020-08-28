@@ -109,7 +109,7 @@ func ShareAccess(access *uplink.Access, configStorj ConfigStorj) {
 // ConnectToStorj reads Storj configuration from given file
 // and connects to the desired Storj network.
 // It then reads data property from an external file.
-func ConnectToStorj(fullFileName string, configStorj ConfigStorj, accesskey bool) (*uplink.Access, *uplink.Project) {
+func ConnectToStorj(configStorj ConfigStorj, accesskey bool) (*uplink.Access, *uplink.Project) {
 
 	var access *uplink.Access
 	var cfg uplink.Config
@@ -153,7 +153,7 @@ func ConnectToStorj(fullFileName string, configStorj ConfigStorj, accesskey bool
 }
 
 // UploadData uploads the backup file to storj network.
-func UploadData(project *uplink.Project, configStorj ConfigStorj, uploadFileName string, reader io.Reader, filePath string) {
+func UploadData(project *uplink.Project, configStorj ConfigStorj, uploadFileName string, reader io.Reader) {
 
 	ctx := context.Background()
 

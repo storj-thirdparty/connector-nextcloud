@@ -6,8 +6,6 @@
 
 There are two config files that contain Storj network and Nextcloud connection information. The tool is designed so you can specify a config file as part of your tooling/workflow.
 
-
-
 ##### `nextcloud_property.json`
 
 Inside the `./config` directory there is a `nextcloud_property.json` file, with following information about your nextcloud account instance:
@@ -15,7 +13,6 @@ Inside the `./config` directory there is a `nextcloud_property.json` file, with 
 * `url`- Login url of the user nextcloud account of the corresponding service provider
 * `username` - Username of nextcloud account
 * `password` - Password of nextcloud account
-
 
 ##### `storj_config.json`
 
@@ -33,8 +30,6 @@ Inside the `./config` directory a `storj_config.json` file, with Storj network c
 * `allowDelete` - Set *true* to create serialized access with restricted delete
 * `notBefore` - Set time that is always before *notAfter*
 * `notAfter` - Set time that is always after *notBefore*
-
-
 
 ## Run
 
@@ -66,8 +61,6 @@ $ ./connector-nextcloud store --accesskey
 ```
 $ ./connector-nextcloud store --share
 ```
-
-
 
 ## Testing
 * The project has been tested on the following operating systems:

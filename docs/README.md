@@ -4,7 +4,6 @@
 [![Go Report Card](https://goreportcard.com/badge/github.com/storj-thirdparty/connector-nextcloud)](https://goreportcard.com/report/github.com/storj-thirdparty/connector-nextcloud)
 ![Cloud Build](https://storage.googleapis.com/storj-utropic-services-badges/builds/connector-nextcloud/branches/master.svg)
 
-
 ## Overview
 
 The nextcloud Connector connects to nextcloud and transfers all the files with the file structure to Storj network.
@@ -31,15 +30,11 @@ The following flags  can be used with the `store` command:
 
 Sample configuration files are provided in the `./config` folder.
 
-
-
 ## Requirements and Install
 
 To build from scratch, [install the latest Go](https://golang.org/doc/install#install).
 
 > Note: Ensure go modules are enabled (GO111MODULE=on)
-
-
 
 ### Option #1: clone this repo (most common)
 
@@ -56,8 +51,6 @@ cd connector-nextcloud
 go build
 ```
 
-
-
 ### Option #2:  ``go get`` into your gopath
 
 To download the project inside your GOPATH use the following command:
@@ -65,7 +58,6 @@ To download the project inside your GOPATH use the following command:
 ```
 go get github.com/storj-thirdparty/connector-nextcloud
 ```
-
 
 > NOTE: The above command may show the following warnings and can be ingnored:
 ```
@@ -101,7 +93,6 @@ $ ./connector-nextcloud --version
 ```
 $ ./connector-nextcloud store
 ```
-
 
 ## Flow Diagram
 

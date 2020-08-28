@@ -42,7 +42,7 @@ func nextcloudStore(cmd *cobra.Command, args []string) {
 	storjConfig := LoadStorjConfiguration(fullFileNameStorj)
 
 	// Connect to storj network using the specified credentials.
-	access, project := ConnectToStorj(fullFileNameStorj, storjConfig, useAccessKey)
+	access, project := ConnectToStorj(storjConfig, useAccessKey)
 
 	// Connect to Nextcloud using the specified credentials
 	nextcloudClient := ConnectToNextcloud(configNextcloud)
@@ -55,7 +55,7 @@ func nextcloudStore(cmd *cobra.Command, args []string) {
 	for i := 0; i < len(AllFilesWithPaths); i++ {
 		file := AllFilesWithPaths[i]
 		nextcloudReader := GetReader(nextcloudClient, file)
-		UploadData(project, storjConfig, file, nextcloudReader, AllFilesWithPaths[i])
+		UploadData(project, storjConfig, file, nextcloudReader)
 	}
 	fmt.Printf("\nBack-up complete.\n\n")
 
