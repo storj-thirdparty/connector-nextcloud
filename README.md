@@ -4,11 +4,9 @@
 [![Go Report Card](https://goreportcard.com/badge/github.com/storj-thirdparty/connector-nextcloud)](https://goreportcard.com/report/github.com/storj-thirdparty/connector-nextcloud)
 ![Cloud Build](https://storage.googleapis.com/storj-utropic-services-badges/builds/connector-nextcloud/branches/master.svg)
 
-
 ## Overview
 
 The nextcloud Connector connects to nextcloud and transfers all the files with the file structure to Storj network.
-
 
 ```bash
 Usage:
@@ -30,10 +28,7 @@ The following flags  can be used with the `store` command:
 * `accesskey` - Connects to the Storj network using a serialized access key instead of an API key, satellite url and encryption passphrase.
 * `share` - Generates a restricted shareable serialized access with the restrictions specified in the Storj configuration file.
 
-
-
 Sample configuration files are provided in the `./config` folder.
-
 
 ## Requirements and Install
 
@@ -77,7 +72,6 @@ github.com/storj-thirdparty/connector-nextcloud/nextcloud
 ../../go/src/github.com/storj-thirdparty/connector-nextcloud/nextcloud/nextcloud.go:130:41: nextcloudClient.WebDav undefined (type *gonextcloud.Client is pointer to interface, not interface)
 ```
 
-
 ## Run (short version)
 
 Once you have built the project run the following commands as per your requirement:
@@ -99,7 +93,6 @@ $ ./connector-nextcloud version
 ```
 $ ./connector-nextcloud store
 ```
-
 
 ## Documentation
 
